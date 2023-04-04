@@ -1,0 +1,108 @@
+data,
+ "Purchasing Process for BlazeMeter Digital Plans
+   After your account has been set up a Free plan is active by default. For a Free plan no billing information is required. For customers who want to upgrade from the Free plan to a Basic or Pro plan the process is straightforward. All you have to do is chose a plan and complete the purchasing process. This article walks you through this process.
+   You complete the purchase in three steps
+     Choose the desired plan and payment frequency
+     Provide information on the purchaser and Enter credit card details.
+     Typically the person making the purchase handles billing for the company. In some cases a third party service provider purchases the plan for the company. In the following instructions we will explain the differences between these two types of purchasers.
+ Navigating to the Billing Screen
+   To reach the Billing screen click the cog icon at the top right of the screen.
+   The Account Settings side menu will appear on the lefthand side of the screen.
+   Under the Account tab click Billing.
+   The Billing screen opens in the main area of the screen.
+ Updating the Current Plan
+   Whether you are starting out with the Free plan or perhaps have the Basic plan you upgrade the plan in the same way. For customers who have the Basic plan and are upgrading to the Pro plan the cost of the new plan is prorated based on the time left in the previous plan.
+   Click on the Upgrade button in the upper right hand corner of the Billing screen
+     In the top section of the screen will appear the upgrade options.
+     Choose your payment frequency. You have a choice between annual and monthly payment plans. As you can see the Annual plan gives you a discount. The decision is yours!
+     If you currently have the Free plan you'll have a choice between the Basic and Pro plans. For convenience the cost (per month) and plan details are displayed.
+     If you choose the annual plan you'll see [pcs]
+     And for the monthly plan you'll see [pcs]
+     Click the Upgrade button corresponding to the plan you choose.
+     Filling out the Payment Information for Plan Upgrades
+       The next step after choosing the type of upgrade (Basic or Pro) from the Free plan is to enter the billing information. If you are upgrading from a Basic plan to the Pro plan then there is no need to enter billing information since it has already been filled out. In case there is a change in those details see the section below on how to edit them.
+       The first form to fill out are details of the customer making the purchase including name and address. See here for example what you would see if you upgraded to the Basic plan [pcs]
+       After filling out all the details in this form click the Payment Information button to continue to the next step. [pcs]
+       Here you need to enter your credit card information. In this example the payment frequency is Annual so to complete the process click on the Upgrade to $1188.00/year button. (The text on the button changes according to the plan and frequency chosen).
+   To complete the Purchasing Process enter the Billing Details as explained in the next section. You should follow these instructions also for the case where there are changes in the Billing Details or Payment Information of an existing plan.
+ Updating the Billing Details
+   To update the Billing Details
+     Click the Edit button at the right hand side of the Billing Details tab.
+     Fill out the fields. The email field is automatically filled with the email of the person who set up the account [pcs]
+     Fill in the name of the person making the purchase the company name and address details.
+     When you are done click Save Changes. Otherwise if you do not want to save the information that was entered click Close to discard the form.
+   To be clear if you are a third party making this purchase for another company put in your name and your company information here. This is because the information you enter will also appear on the invoices.
+ Updating the Payment Information
+   The payment method is always credit card.
+   To begin click on Edit button to the right of the Payment Information tab [pcs]
+   Enter your name and address.
+    Next click on the Payment Information button. You will not be able click this button until you fill in the mandatory fields.
+    In the Payment Information window you can only enter credit card details. Here you must enter a valid credit card number the expiration date of the card and the security code on the back of the card.
+    Click Add Card.
+ Summary
+    Your billing details are not visible to any other users. Even Admin users cannot see this information. In case there are any changes in the Billing Details or Payment information you can always go back and edit them here.",
+
+  "What is Variable Unit VU as Credit
+   A metric that measures usage of all capabilities across the entire BlazeMeter platform.
+  What is VU ceiling
+   The maximum concurrency that you can leverage across the platform as a whole at any time.
+  What are the usage metrics taken into account for VU ceiling
+   Number of virtual users
+   Browser session executions
+   Running mock services
+   Mock service transactions
+   Test data usage
+   Running tests
+  Does VU metric extend to Mock Services or API Monitoring
+   Currently it does not.
+  How do Concurrent VUs translate to the individual parts of the BlazeMeter Continuous Testing Platform
+   Performance Testing 1 Variable Unit Hour (VUH) equals 1 VU.
+   GUI Functional Testing 1 Browser session execution equals 100 VU.
+   Mock Services Each running Mock Service equals 100 VU and includes 2000 transactions. Every additional 2000 transactions equal 100 VU that is reserved for 24 hours while the Mock Service is running.
+   API Monitoring also replaces API Functional Testing 1000 API calls
+  What is Variable Unit Hours VUH as Credit
+   A metric used to measure Performance testing and GUI Functional testing usage.
+  How does consumption work with VUH as credit
+   Consumption will be deducted from your VUH credit balance.
+   How does BlazeMeter calculate VUH in Performance testing
+   VUH is calculated as follows
+   Length of test in hours rounded up to the next hour * Max Users
+   Example If a Performance test runs for 90 minutes with 60 virtual users 2 * 60 = 120 VUH will be billed.
+  How is a test's consumption of VUH determined
+   It is based on the actual max concurrency and duration of the test.
+   If you configured a onehour test ramping up to 20000 virtual users but stopped it when it reached 10000 virtual users the test would only consume 10000 VUH. 
+   If the test was configured for 3 hours but you stopped it after 2 hours it would consume the max concurrency reached times 2 (hours).
+  GUI Functional testing
+   In GUI Functional testing VUH is determined by the length of your browser session.
+  Sum of each browser session in a GUI Functional test
+   Length of a browser session in hours (rounded up to the next hour) * 100 VUH
+   Example A GUI Functional test has 2 browsers and 2 iterations with different sets of test data (each iteration runs in a separate browser session for isolation purposes). Each browser session runs for ~5 minutes.
+   Credits used = 2 (browsers) * 2 (iterations) * 100 (VUH per browser session in 1 hour) = 400 VUH
+   Note that a test's consumption of VUH is based on the actual max concurrency and duration of the test. If you configured a onehour test ramping up to 20000 virtual users but stopped it when it reached 10000 virtual users the test would only consume 10000 VUH. If the test was configured for 3 hours but you stopped it after 2 hours it would consume the max concurrency reached times 2 (hours).
+  BlazeMeter Test Data Consumption
+   When you use BlazeMeter Test Data features as part of a test execution you will consume 50% more VU or VUH. You can find the maximum number of test data rows that can be generated for your plan in the plan comparison table.
+   Example 1 A Performance test with 1000 virtual users consumes 1000 VUH. When you add BlazeMeter Test Data to that test you incur 50% more in usage amounting to 1500 VUH.
+   Example 2 A standalone mock service processes 3000 transactions therefore consuming 200 VU (100 VU is consumed for running the service. The first 2000 transactions are free. For every additional 2000 transactions or part thereof it consumes 100 VU more.) If you add BlazeMeter Test Data to it you will consume 200 VU plus 50% that is 300 VU.
+  How Many Credits Will My Test Use
+   Credits are counted per test not per minute hour or engines. Please note that each test takes a couple of minutes to start up and spin down. An hour long test runs approximately 55 minutes long plus time to start up and shut down.
+   1 test credit will be deducted from your test credit balance once the test is completed. For multi tests 1 credit will be deducted as well.
+   Maximum test duration depends on the plan selected.
+   If for whatever reason a test failed to run for example an error in a user uploaded script or failed to generate a report tests need to run for at least 2 minutes to generate a report the test will not be deducted from your test credits.
+  Purchasing Additional Credits
+   As an account owner you can easily refill your credit balance when your team’s credits are running low. This means that you don't have to stop testing if you run out of credits before the end of the billing cycle. Applies to Basic Monthly Basic Annual and Pro Monthly accounts.
+  How do I know when it's time to renew
+   BlazeMeter automatically triggers alerts if the number of remaining credits goes below 10% of the total number of credits included in your current plan. There are two types of alerts
+   Email notifications
+   Onscreen messages
+   You can renew your subscription before your colleagues try to run tests with an insufficient number of credits.
+   Once you refill your credit any remaining credits in your previous plan are rolled over to your new plan (up to 10%). Any unused credits at the end of the current billing cycle are rolled over automatically to the credit balance of the next billing cycle.
+   Example You have a Basic Monthly plan which lets you run up to 15 tests a month. 3 weeks into the billing cycle you see an onscreen message indicating you are almost out of test credits. This message indicates that you have used up 14 tests out of the 15 tests included in your current plan and you are only allowed to run one more test. To continue testing you decide to refill your credit balance.
+  How do I purchase additional credits
+   Perform one of the following actions to upgrade or renew your plan In an email notification click Upgrade your plan In an onscreen message click upgrade your plan 
+   In BlazeMeter renew or upgrade your plan.
+     Click the cogwheel in the topright corner of the screen.
+     The Settings menu opens.
+   Under Account click Billing
+   The Subscription page displays
+     Click Renew to purchase the same plan again or click Upgrade to purchase a better plan.
+     Result An additional number of credits (either test credits or VUHs) is added to your account. A popup displays with a summary of the number of credits you're buying and how much you'll be charged. When you confirm the credits are available for immediate use."
